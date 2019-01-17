@@ -1,0 +1,307 @@
+@charset "utf-8";
+
+/* 初期設定
+---------------------------------------------------- */
+#txt {
+    color: rgb(103, 38, 38);
+    border: 1px solid rgb(103, 38, 38);
+    background-color: rgb(103, 38, 38);
+}
+
+#txt2 {
+    color: rgb(103, 38, 38);
+    border: 1px solid rgb(103, 38, 38);
+    background-color: rgb(103, 38, 38);
+}
+
+#txt3 {
+    color: rgb(103, 38, 38);
+    border: 1px solid rgb(103, 38, 38);
+    background-color: rgb(103, 38, 38);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    color: #ffffff;
+    background-image: url(images/choko.jpg);
+    background-repeat: repeat;
+    font-family: "HG創英角ﾎﾟｯﾌﾟ体";
+}
+
+#maincontent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    width: 100%;
+}
+
+loader {
+    position: absolute;
+    z-index: 9999;
+    width: 39px;
+    height: 39px;
+    top: 49%;
+    left: 49%;
+}
+
+img.bg {
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+
+
+h1,
+h2 {
+    color: #ffffff;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+p {
+    line-height: 1.0;
+}
+
+a:link,
+a:visited {
+    color: #3377cc;
+}
+
+a:hover {
+    color: #999999;
+}
+
+section,
+article,
+aside,
+nav,
+header,
+main,
+footer {
+    display: block;
+}
+
+table,
+td,
+th {
+    border: 1px solid gray
+}
+
+div.box1 {
+    overflow: hidden;
+    position: relative;
+    width: 900px;
+    margin: 5px;
+    padding: 10px;
+    opacity: 0.85;
+    border: 1px solid black;
+    background-color: rgb(103, 38, 38);
+    border-radius: 10px;
+}
+
+
+
+
+
+
+/* ページの枠組み
+---------------------------------------------------- */
+#page {
+
+    margin: 0 auto;
+    width: 900px;
+}
+
+main {
+    float: center;
+    width: 750px;
+    padding-bottom: 50px;
+}
+
+#sidebar {
+    float: left;
+    width: 150px;
+}
+
+header01 img {
+
+    float: right;
+    display;
+    block;
+
+}
+
+footer {
+    clear: both;
+}
+
+footer section {
+    float: left;
+    width: 200px;
+}
+
+footer section:nth-child(2) {
+    margin: 0 30px;
+}
+
+#copyright {
+    float: center;
+    color: #ff3366;
+    clear: both;
+}
+
+/* ヘッダー
+---------------------------------------------------- */
+header img {
+    display: block;
+    margin: 600px 0 0 0;
+
+}
+
+
+#logo {
+    display: block;
+    width: 100px;
+    height: 150px;
+    margin: 20px 0;
+    background-image: url(images/logo.png);
+}
+
+#mainvisual {
+    display: block;
+    width: 850px;
+    height: 500px;
+    background-image: url(images/top03.PNG);
+}
+
+/* ナビゲーション
+---------------------------------------------------- */
+
+
+nav ul {
+    float: left;
+    overflow: hidden;
+    margin: 10px 0 10px 0;
+    padding: 0;
+    border: 1px solid #ffffff;
+    border-radius: 100px;
+    box-shadow: inset 1px 1px 0 #ffffff, 1px 1px 1px rgba(0, 0, 0, 0.1);
+    line-height: 2.0;
+}
+
+nav li,
+nav a {
+    display: block;
+}
+
+nav li {
+    float: left;
+    border-right: 1px solid #dddddd;
+}
+
+nav a {
+    padding: 10px 58.312px;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 1px 1px 0 #ffffff;
+}
+
+nav #current a {
+    color: #333333;
+    background: #ff3366;
+
+
+    #menu ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    #menu li {
+        display: inline;
+        padding: 0;
+        margin: 1px;
+    }
+
+    #menu li a {
+        display: block;
+        border-left: 10px solid #d80000;
+        background-color: #002a39;
+        padding: 8px 10px;
+        text-decoration: none;
+        color: #fdffde;
+        width: 140px;
+        margin: 5px 0px;
+        text-align: left;
+        font-size: 100px;
+    }
+
+    #menu li a:hover {
+        border-left: 12px solid #0365ca;
+        background-color: #002a39;
+    }
+
+    /* フッター
+---------------------------------------------------- */
+    #site_map {
+        margin-top: 100px;
+    }
+
+    footer {
+        display: block;
+        width: 80px;
+        float: center;
+        margin-top: 100px;
+        border-top: 1px solid #cccccc;
+    }
+
+    #copyright {
+        padding-top: 20px;
+        text-align: center;
+        color: #ff3366;
+    }
+
+    /* 表組み
+---------------------------------------------------- */
+    table,
+    td,
+    th {
+        border: 1px solid ff3366
+    }
+
+    table {
+        font-size: 10px;
+        text-align: center;
+        width: 100%;
+        table-layout: fixed;
+        background-color: #ff3366;
+    }
+
+    .top_c {
+        background-color: #ff3366;
+        color: #ff3366;
+    }
+
+    .left1 {
+        text-align: center;
+        width: 3%;
+
+    }

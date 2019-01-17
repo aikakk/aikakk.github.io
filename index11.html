@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>Psychology test</title>
+    <link rel="stylesheet" href="style1.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="googleSheets.js"></script>
+</head>
+
+
+
+<body>
+
+
+    <div id="page">
+
+        <header>
+            <img id="logo" src="images/logo.png" alt="logo" width="595" height="842">
+            <nav>
+                <ul>
+                    <li id="current"><a href="index11.html">心理テスト１</a></li>
+                    <li><a href="lecture1.html">心理テスト２</a></li>
+                    <li><a href="portfolio1.html">心理テスト３</a></li>
+                    <li><a href="temp1.html">心理テスト４</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <br> <br> <br> <br>
+        <section>
+            <h2 id="about">★好きな人との未来がわかる★</h2>
+
+            <div class="box1">
+
+                <h2>あなたは時間を自由に止められます。時間を止めて相手の体に触れるとしたら、<br>一番採取にどこに触れますか？</h2>
+                <button id="mybtn1">髪に触れる</button>
+                <input id="txt" type="text" value="髪に触れる">
+                <div id="contents1"></div>
+
+                <button id="mybtn2">頬に触れる</button>
+                <input id="txt2" type="text2" value="頬に触れる">
+                <div id="contents2"></div>
+
+                <button id="mybtn3">手に触れる</button>
+                <input id="txt3" type="text3" value="手に触れる">
+                <div id="contents3"></div>
+
+                <script>
+                    /* global $ loadSheets */
+                    $(function() {
+                        $("#mybtn1").on("click", showdata);
+                        async function showdata() {
+                            let data = await loadSheets('s1316157!B2:D13'); //これが来るまで待つ
+                            console
+                            $("#contents1").append(data.values[0][2]); //説明
+                            $("#contents1").append("<img width='800px' height='600px' src='" + data.values[0][1] + "'/>"); //画像
+                        }
+                    });
+
+                    $(function() {
+                        $("#mybtn2").on("click", showdata);
+                        async function showdata() {
+                            let data = await loadSheets('s1316157!B2:D13'); //これが来るまで待つ
+                            console
+                            $("#contents2").append(data.values[1][2]); //説明
+                            $("#contents2").append("<img width='800px' height='600px' src='" + data.values[1][1] + "'/>"); //画像
+                        }
+                    });
+
+                    $(function() {
+                        $("#mybtn3").on("click", showdata);
+                        async function showdata() {
+                            let data = await loadSheets('s1316157!B2:D13'); //これが来るまで待つ
+                            console
+                            $("#contents3").append(data.values[2][2]); //説明
+                            $("#contents3").append("<img width='800px' height='600px' src='" + data.values[2][1] + "'/>"); //画像
+                        }
+                    });
+
+                </script>
+                <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()">
+                </script>
+
+            </div>
+        </section>
+
+
+        <footer id="site_map">
+            <img id="line" src="images/line.png" alt="line" width="850" height="50">
+            <aside>
+                <section>
+                    <h2><a href="index11.html">心理テスト１</a></h2>
+                    <ul>
+                        <li>好きな人との未来がわかる</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2><a href="lecture1.html">心理テスト２</a></h2>
+                    <ul>
+                        <li>男を見る目はある？</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2><a href="portfolio1.html">心理テスト３</a></h2>
+                    <ul>
+                        <li>男性が女性にプレゼント</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2><a href="temp1.html">心理テスト４</a></h2>
+                    <ul>
+                        <li>止まらないタクシー</li>
+                    </ul>
+                </section>
+            </aside>
+        </footer>
+    </div>
+</body>
+
+<script>
+    $(function() {
+        "use strict";
+        // unsupported.
+        if (!'SpeechSynthesisUtterance' in window) {
+            alert('Speech synthesis(音声合成) APIには未対応です.');
+            return;
+        }
+        // 発話機能をインスタンス化
+        var msg = new SpeechSynthesisUtterance();
+
+        $('#mybtn1').on('click', function() { //ボタンをクリックしたら
+            // 発話実行
+            msg.volume = 1.0; // 音量 min 0 ~ max 1
+            msg.rate = 1.0; // 速度 min 0 ~ max 10
+            msg.pitch = 1.2; // 音程 min 0 ~ max 2
+
+            msg.text = $('#txt').val(); // 話す中身タイプ
+            msg.lang = 'ja-JP'; // en-US or ja-JP
+
+            speechSynthesis.speak(msg);
+
+            // 終了時の処理
+            msg.onend = function(event) {
+                console.log('喋った時間：' + event.elapsedTime + 's');
+            }
+        });
+
+        $('#mybtn2').on('click', function() { //ボタンをクリックしたら
+            // 発話実行
+            msg.volume = 1.0; // 音量 min 0 ~ max 1
+            msg.rate = 1.0; // 速度 min 0 ~ max 10
+            msg.pitch = 1.2; // 音程 min 0 ~ max 2
+
+            msg.text = $('#txt2').val(); // 話す中身タイプ
+            msg.lang = 'ja-JP'; // en-US or ja-JP
+
+            speechSynthesis.speak(msg);
+
+            // 終了時の処理
+            msg.onend = function(event) {
+                console.log('喋った時間：' + event.elapsedTime + 's');
+            }
+        });
+
+        $('#mybtn3').on('click', function() { //ボタンをクリックしたら
+            // 発話実行
+            msg.volume = 1.0; // 音量 min 0 ~ max 1
+            msg.rate = 1.0; // 速度 min 0 ~ max 10
+            msg.pitch = 1.2; // 音程 min 0 ~ max 2
+
+            msg.text = $('#txt3').val(); // 話す中身タイプ
+            msg.lang = 'ja-JP'; // en-US or ja-JP
+
+            speechSynthesis.speak(msg);
+
+            // 終了時の処理
+            msg.onend = function(event) {
+                console.log('喋った時間：' + event.elapsedTime + 's');
+            }
+        });
+
+    });
+
+</script>
+
+</html>
